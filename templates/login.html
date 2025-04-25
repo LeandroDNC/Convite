@@ -13,14 +13,20 @@
         <div class="logo">
             <img src="../static/assets/Logo Atacarejo.png" alt="Logo Atacarejo">
         </div>
-        <form class="login-form">
+
+        <!-- Corrigido: adicionado method e action -->
+        <form class="login-form" method="POST" action="/">
             <h2>Bem-vindo!</h2>
-            <input type="text" placeholder="Usuário" required>
-            <input type="password" placeholder="Senha" required>
+
+            <!-- Corrigido: adicionados os atributos name -->
+            <input type="text" name="usuario" placeholder="Usuário" required>
+            <input type="password" name="senha" placeholder="Senha" required>
             <button type="submit">Entrar</button>
+
             <p class="footer-text">Esqueceu a senha?</p>
         </form>
     </div>
 </body>
 
 </html>
+F

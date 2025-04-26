@@ -19,15 +19,15 @@ def login():
 
     return render_template('login.html')
 
-@app.route('/painel')
-def painel():
-    return "<h1>Bem-vindo ao painel do sistema!</h1>"
-
 @app.route('/dashboard')
-def dashboard():
-    return render_template('dashboard.html')
+def dashboard():       
+ return render_template('dashboard.html')
 
+@app.route('/cadastro', methods=['GET', 'POST'])
+def cadastro():
+    
+    
 
-if __name__ == '__main__':
+ if __name__ == '__main__':
     app.run(debug=True)
 

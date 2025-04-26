@@ -6,10 +6,10 @@ function verRelatorio() {
     alert("Carregando relatório de vendas...");
 }
 
-const loginURL = "{{ url_for('login') }}";
-
-function sair() {
-    window.location.href = loginURL;
+function CadastroDeProdutos() {
+    alert("Carregando relatório de vendas...");
 }
 
-document.getElementById("botao-sair").addEventListener("click", sair);
+function sair() {
+    window.location.href = '../templates/deshboard.html';
+}

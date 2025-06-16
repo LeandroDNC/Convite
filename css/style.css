@@ -1,0 +1,292 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+header {
+    background-color: #1c1c1c;
+    color: #FFD700;
+    padding: 30px 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+header .logo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #FFD700;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+header .logo:hover {
+    transform: scale(1.05);
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 10px 0 5px 0;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-family: 'Cinzel', serif;
+    /* Fonte com estilo clássico nobre */
+    color: #f7d774;
+    /* fallback */
+    background: linear-gradient(135deg, #fff4b1, #ffd700, #c9a203, #ffd700);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        1px 1px 2px rgba(0, 0, 0, 0.6),
+        2px 2px 4px rgba(0, 0, 0, 0.5),
+        3px 3px 6px rgba(0, 0, 0, 0.4);
+    /* Efeito de profundidade */
+}
+
+
+header p {
+    font-size: 1.2em;
+    margin: 5px 0 0 0;
+    color: #e0e0e0;
+    line-height: 1.5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+.bannerart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.bannerart img {
+    width: 100%;
+
+}
+
+.marcar {
+    width: 20rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFD700;
+    /* dourado */
+    color: #000;
+    /* contraste para texto */
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    position: absolute;
+    left: 5%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Animação no hover */
+.marcar:hover {
+    background-color: #ffcc00;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Efeito ao clicar */
+.marcar:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+h1 {
+    font-size: 2.5em;
+    margin: 10px 0;
+    color: #FFD700;
+}
+
+p {
+    margin: 5px 0;
+}
+
+.banner img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.carrossel {
+    margin: 40px 0;
+}
+
+.carrossel h2 {
+    color: #FFD700;
+    margin-bottom: 20px;
+}
+
+.fotos {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+}
+
+.fotos img {
+    flex: 0 0 auto;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #FFD700;
+    scroll-snap-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.fotos img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #FFD700;
+}
+
+.agendamento h2 {
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+button {
+    margin: 10px;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    background-color: #25D366;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #FFD700;
+    color: #000;
+    transform: scale(1.05);
+}
+
+
+.servicos {
+    background-color: #1c1c1c;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.servicos h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #FFD700;
+}
+
+.servicos ul {
+    list-style: none;
+    padding: 0;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.servicos li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #555;
+    padding: 10px 0;
+    font-size: 1.1em;
+}
+
+.servicos li span:first-child {
+    text-align: left;
+}
+
+.servicos li span:last-child {
+    text-align: right;
+    color: #FFD700;
+    font-weight: bold;
+}
+
+
+footer {
+    background-color: #111;
+    padding: 20px 10px;
+    color: #bbb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.footer-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer p {
+    flex: 1;
+    margin: 0;
+    font-size: 0.9em;
+    color: #999;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 1.5em;
+}
+
+.social-icons a {
+    color: #FFD700;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #25D366;
+    transform: scale(1.2);
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .fotos img {
+        width: 80%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p{
+        font-size: 1rem;
+    }
+
+    .marcar{
+        width: 10rem;
+        height: 2rem;
+        font-size: 0.9rem;
+        padding: 5px;
+    }
+}

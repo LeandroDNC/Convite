@@ -186,16 +186,17 @@
 
  .center {
      text-align: center;
+     
  }
 
  /* Seção hero */
  .hero {
+    width:100%;
      padding-top: 72px;
      padding-bottom: 20px;
  }
 
  .hero .wreath {
-     width: 140px;
      height: 140px;
      margin: 0 auto 12px;
      opacity: .9;

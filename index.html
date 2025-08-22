@@ -2,66 +2,113 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lobo Barbearia - Corte com Estilo</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Convite de Noivado – Leandro & Erwelly</title>
+
+    <!-- Tipografias elegantes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./css/index.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
 
 </head>
 
 <body>
+    <div class="wrap">
+        <div class="ornament" aria-hidden="true"></div>
 
-    <header>
-        <img src="assets/logo.jpeg" alt="Logo Lobo Barbearia" class="logo">
-        <h1>Lobo Barbearia</h1>
-        <p>Estilo, Precisão e Atitude - Junho 2025</p>
-    </header>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="card reveal center">
+                <svg class="wreath" viewBox="0 0 200 200" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#9fb7d1" />
+                            <stop offset="1" stop-color="#c7b288" />
+                        </linearGradient>
+                    </defs>
+                    <g fill="none" stroke="url(#g1)" stroke-width="2" opacity=".95">
+                        <path d="M100 12c48 0 88 40 88 88s-40 88-88 88-88-40-88-88 40-88 88-88Z" />
+                        <path d="M100 18c45 0 82 37 82 82s-37 82-82 82-82-37-82-82 37-82 82-82Z" opacity=".35" />
+                    </g>
+                    <g fill="#9fb7d1" opacity=".9">
+                        <circle cx="40" cy="60" r="3" />
+                        <circle cx="160" cy="70" r="2.6" />
+                        <circle cx="60" cy="150" r="2.4" />
+                        <circle cx="140" cy="140" r="2.8" />
+                    </g>
+                </svg>
+                <div class="eyebrow">Convidamos você para o nosso noivado</div>
+                <h1 class="names">Leandro Marques</h1>
+                <div class="ampersand">&</div>
+                <h2 class="names" style="margin-top:0">Erwelly Petresse</h2>
+                <div class="divider" aria-hidden="true"></div>
+                <div class="date-row" id="dateRow">
+                    <div class="pill" id="month">NOV</div>
+                    <div class="day" id="day">22</div>
+                    <div class="pill" id="year">2025</div>
+                </div>
+                <p class="subtle" id="countdown">Contagem regressiva</p>
+            </div>
+        </section>
 
+        <!-- INFORMAÇÕES -->
+        <section class="reveal">
+            <div class="info">
+                <div class="tile">
+                    <h4>Local</h4>
+                    <p>Boi e Brasa • Abreu e Lima – PE</p>
+                    <p class="subtle">Às <strong>18:00</strong> horas</p>
+                    <div class="center" style="margin-top:10px">
+                        <a class="btn" target="_blank" rel="noopener"
+                            href="https://www.google.com/maps/search/?api=1&query=Boi%20e%20Brasa%20Abreu%20e%20Lima%20PE">Abrir
+                            no mapa</a>
+                    </div>
+                </div>
 
-    <div class="bannerart">
-        <div class="marcar">Agende já o seu corte!</div>
-        <img src="assets/banbnerart.svg" alt="">
+                <div class="tile">
+                    <h4>Traje</h4>
+                    <p>Esporte fino (toque de azul bem-vindo).</p>
+                </div>
+
+                <div class="tile">
+                    <h4>Confirmação</h4>
+                    <p>Confirme sua presença até 10/11 por WhatsApp.</p>
+                    <div class="center" style="margin-top:10px">
+                        <a class="btn"
+                            href="https://wa.me/?text=Confirmo%20presen%C3%A7a%20no%20noivado%20Leandro%20%26%20Erwelly%20em%2022/11"
+                            target="_blank" rel="noopener">Confirmar presença</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MIMO FINAL -->
+        <section class="footer reveal center">
+            <div class="card">
+                <div class="tag">Com carinho</div>
+                <div class="names" style="font-size:34px; margin:4px 0 6px">Esperamos por você</div>
+                <p class="details">Toque nos coraçõezinhos para soltar confetes ✨</p>
+                <div style="margin-top:12px; display:flex; gap:8px; justify-content:center;">
+                    <button class="btn" id="addCalendar">Adicionar ao calendário</button>
+                    <button class="btn" id="confetti">❤️</button>
+                </div>
+            </div>
+        </section>
     </div>
 
+    <div class="bar" aria-hidden="true">
+        <a class="btn" href="#dateRow">Topo</a>
+    </div>
 
-    <section class="servicos">
-        <h2>Nossos Serviços</h2>
-        <ul>
-            <li><span>Degradê</span><span>R$ 25</span></li>
-            <li><span>Social</span><span>R$ 20</span></li>
-            <li><span>Barba</span><span>R$ 15</span></li>
-            <li><span>Pigmentação</span><span>R$ 20</span></li>
-            <li><span>Sobrancelha</span><span>R$ 5</span></li>
-            <li><span>Degradê + Barba</span><span>R$ 35</span></li>
-            <li><span>1 Pente (Só Máquina)</span><span>R$ 15</span></li>
-            <li><span>2 ou + Pentes (Só Máquina)</span><span>R$ 18</span></li>
-            <li><span>Só Tesoura</span><span>R$ 30</span></li>
-            <li><span>Freestyle</span><span>A partir de R$ 5</span></li>
-        </ul>
-    </section>
+    <span class="sr-only" id="aria-confetti" aria-live="polite"></span>
 
 
-    <section class="agendamento">
-        <h2>Agende seu horário</h2>
-        <p>Quer um corte diferenciado? Fale direto com a gente!</p>
-        <button onclick="agendarZap()"><i class="fab fa-whatsapp"></i> WhatsApp</button>
-        <button onclick="abrirInstagram()"><i class="fab fa-instagram"></i> Instagram</button>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Lobo Barbearia - Todos os direitos reservados</p>
-            <div class="social-icons">
-                <a href="https://wa.me/558184819184" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.instagram.com/seu_usuario_aqui" target="_blank"><i
-                        class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/script.js"></script>
 </body>
+<script src="./js/index.js"></script>
 
 </html>

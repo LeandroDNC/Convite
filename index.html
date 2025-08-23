@@ -18,22 +18,24 @@
 </head>
 
 <body>
+    <audio id="bg-music" autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+
     <div class="wrap">
         <div class="ornament" aria-hidden="true"></div>
 
         <!-- HERO -->
-        <section class="hero">
+        <section class="hero"> 
             <div class="card reveal center">
-               <div class="banner">
-                  <img src="./assets/logo.svg" alt="">  
 
-               </div>
-
-
-                <div class="eyebrow">Convidamos você para o nosso noivado</div>
-                <div class="names" style="font-size:34px; margin:4px 0 6px">Leandro Marques</div>
-                <div class="names" style="font-size:34px; margin:4px 0 6px">e</div>
-                <div class="names" style="font-size:34px; margin:4px 0 6px">Ervelly Petresse</div>
+                <div class="banner" ></div>
+                <div class="eyebrow">Convidamos você para o nosso </div>
+                <div class="eyebrow">noivado</div>
+                <div class="names" style="font-size:40px; margin:4px 0 6px">Leandro Marques</div>
+                <div class="names" style="font-size:40px; margin:4px 0 6px">e</div>
+                <div class="names" style="font-size:40px; margin:4px 0 6px">Ervelly Petresse</div>
                 <div class="divider" aria-hidden="true"></div>
                 <div class="date-row" id="dateRow">
                     <div class="pill" id="month">NOV</div>
@@ -45,41 +47,44 @@
         </section>
 
         <!-- INFORMAÇÕES -->
-        <section class="reveal">
-            <div class="info">
-                <div class="tile">
-                    <h4>Local</h4>
-                    <p>Boi e Brasa • Abreu e Lima – PE 📍</p>
-                    <p class="subtle">Às <strong>18:00</strong> horas</p>
-                    <div class="center" style="margin-top:10px">
-                        <a class="btn" target="_blank" rel="noopener"
-                            href="https://www.google.com/maps/search/?api=1&query=Boi%20e%20Brasa%20Abreu%20e%20Lima%20PE">Abrir
-                            no mapa</a>
+        <div class="inform">
+            <section class="reveal">
+                <div class="info">
+                    <div class="tile">
+                        <h4>Local</h4>
+                        <p>Boi e Brasa • Abreu e Lima – PE 📍</p>
+                        <p class="subtle">Às <strong>18:00</strong> horas</p>
+                        <div class="center" style="margin-top:10px">
+                            <a class="btn" target="_blank" rel="noopener"
+                                href="https://www.google.com/maps/search/?api=1&query=Boi%20e%20Brasa%20Abreu%20e%20Lima%20PE">Abrir
+                                no mapa</a>
+                        </div>
+                    </div>
+
+                    <div class="tile">
+                        <h4>Confirmação</h4>
+                        <p>Confirme sua presença até 10/11 por WhatsApp.</p>
+                        <div class="center" style="margin-top:10px">
+                            <a class="btn" href="https://w.app/ixne6l" target="_blank" rel="noopener">Confirmar
+                                presença</a>
+                        </div>
                     </div>
                 </div>
+            </section>
+            <br>
 
+            <!-- MIMO FINAL -->
+            <section class="footer reveal center">
                 <div class="tile">
-                    <h4>Confirmação</h4>
-                    <p>Confirme sua presença até 10/11 por WhatsApp.</p>
-                    <div class="center" style="margin-top:10px">
-                        <a class="btn"
-                            href="https://w.app/ixne6l"
-                            target="_blank" rel="noopener">Confirmar presença</a>
+                    <div class="tag">Com carinho</div>
+                    <div class="names" style="font-size:34px; margin:4px 0 6px">Esperamos por você</div>
+                    <div style="margin-top:12px; display:flex; gap:8px; justify-content:center;">
+                        <button class="btn" id="addCalendar">Adicionar ao calendário</button>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- MIMO FINAL -->
-        <section class="footer reveal center">
-            <div class="card">
-                <div class="tag">Com carinho</div>
-                <div class="names" style="font-size:34px; margin:4px 0 6px">Esperamos por você</div>
-                <div style="margin-top:12px; display:flex; gap:8px; justify-content:center;">
-                    <button class="btn" id="addCalendar">Adicionar ao calendário</button>
-                </div>
-            </div>
-        </section>
+        </div>
     </div>
 
     <div class="bar" aria-hidden="true">

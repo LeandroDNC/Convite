@@ -92,20 +92,24 @@ document.getElementById('addCalendar').addEventListener('click', (e) => {
 });
 // Música romântica com fade-in automático
 const bgMusic = document.getElementById("bg-music");
-bgMusic.volume = 2; // começa mudo
-bgMusic.play().then(() => {
-    let vol = 1;
-    const fadeIn = setInterval(() => {
-        if (vol < 0.4) { // sobe até 40% de volume
-            vol += 0.01;
-            bgMusic.volume = vol;
-        } else {
-            clearInterval(fadeIn);
-        }
-    }, 200);
-}).catch(() => {
-    // Caso o navegador bloqueie autoplay, inicia no primeiro clique
-    document.body.addEventListener("click", () => {
-        bgMusic.play();
-    }, { once: true });
-});
+bgMusic.volume = 0; // começa mudo
+
+function startMusic() {
+    bgMusic.play().then(() => {
+        let vol = 0;
+        const fadeIn = setInterval(() => {
+            if (vol < 0.4) { // sobe até 40% de volume
+                vol += 0.01;
+                bgMusic.volume = vol;
+            } else {
+                clearInterval(fadeIn);
+            }
+        }, 200);
+    }).catch(() => {
+        // se ainda houver bloqueio, espera o clique
+        document.body.addEventListener("click", startMusic, { once: true });
+    });
+}
+
+// tenta tocar imediatamente
+startMusic();

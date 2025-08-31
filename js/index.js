@@ -55,7 +55,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
 // ===== ICS: adicionar ao calendário =====
 document.getElementById('addCalendar').addEventListener('click', () => {
-    const title = "Noivado Leandro e Erwelly";
+    const title = "Noivado Leandro e Ervelly";
     const description = "Esperamos por você!";
     const location = "Endereço do evento";
 

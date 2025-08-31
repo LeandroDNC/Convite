@@ -52,44 +52,46 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: .18 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// ===== Confete ao toque =====
-function confettiBurst(x, y) {
-    const n = 24; const live = document.getElementById('aria-confetti');
-    live.textContent = 'Confete!';
-    for (let i = 0; i < n; i++) {
-        const d = document.createElement('div');
-        d.style.position = 'fixed'; d.style.left = x + 'px'; d.style.top = y + 'px';
-        d.style.width = '7px'; d.style.height = '12px'; d.style.background = ['#9fb7d1', '#c7b288', '#e8c5c2', '#8aa6c9'][i % 4];
-        d.style.borderRadius = '2px'; d.style.transform = `rotate(${Math.random() * 360}deg)`;
-        d.style.zIndex = 5; d.style.opacity = .95; d.style.pointerEvents = 'none';
-        document.body.appendChild(d);
-        const ang = Math.random() * Math.PI * 2; const vel = 2 + Math.random() * 4;
-        const dx = Math.cos(ang) * vel, dy = Math.sin(ang) * vel;
-        let vx = dx, vy = dy, ay = .12 + Math.random() * .08, life = 0;
-        (function anim() {
-            const t = setTimeout(anim, 16);
-            life += 1; vx *= .99; vy += ay; x += vx * 3; y += vy * 3;
-            d.style.left = x + 'px'; d.style.top = y + 'px'; d.style.transform += ' rotate(6deg)';
-            if (life > 120) { clearTimeout(t); d.remove(); }
-        })();
-    }
-}
-document.getElementById('confetti').addEventListener('click', (e) => {
-    const rect = e.target.getBoundingClientRect();
-    confettiBurst(rect.left + rect.width / 2, rect.top);
-});
 
 // ===== ICS: adicionar ao calendário =====
-document.getElementById('addCalendar').addEventListener('click', (e) => {
-    const dateStr = e.currentTarget.dataset.date; // YYYY-MM-DD
-    const dtStart = dateStr.replace(/-/g, '') + 'T180000';
-    const dtEnd = dateStr.replace(/-/g, '') + 'T210000';
-    const ics = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Convite Noivado//PT-BR\nBEGIN:VEVENT\nUID:${Date.now()}@convite\nDTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').split('.')[0]}Z\nDTSTART:${dtStart}\nDTEND:${dtEnd}\nSUMMARY:Noivado – Leandro & Erwelly\nDESCRIPTION:Esperamos por você! Local: Boi e Brasa, Abreu e Lima – PE.\nLOCATION:Boi e Brasa, Abreu e Lima – PE\nEND:VEVENT\nEND:VCALENDAR`;
-    const blob = new Blob([ics], { type: 'text/calendar' });
+document.getElementById('addCalendar').addEventListener('click', () => {
+    // Dados do evento
+    const title = "Evento Especial";
+    const description = "Esperamos por você!";
+    const location = "Endereço do evento";
+    
+    // Data de início e fim (formato: AAAAMMDDTHHMMSS)
+    const startDate = "20250915T180000"; // 15 de setembro de 2025 às 18:00
+    const endDate = "20250915T210000";   // 15 de setembro de 2025 às 21:00
+
+    // Conteúdo do ICS
+    const icsContent = `
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SeuSite//Eventos//PT
+BEGIN:VEVENT
+SUMMARY:${title}
+DESCRIPTION:${description}
+LOCATION:${location}
+DTSTART:${startDate}
+DTEND:${endDate}
+END:VEVENT
+END:VCALENDAR
+`.trim();
+
+    // Criar blob e link temporário
+    const blob = new Blob([icsContent], { type: 'text/calendar' });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a'); a.href = url; a.download = 'noivado-leandro-erwelly.ics'; a.click();
-    setTimeout(() => URL.revokeObjectURL(url), 5000);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'evento.ics';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
 });
+
 // Música romântica com fade-in automático
 const bgMusic = document.getElementById("bg-music");
 bgMusic.volume = 0; // começa mudo

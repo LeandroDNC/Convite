@@ -59,24 +59,20 @@ document.getElementById('addCalendar').addEventListener('click', () => {
     const description = "Esperamos por você!";
     const location = "Endereço do evento";
 
-    // Usando TZID para horário local
-    const startDate = "20251122T180000";
-    const endDate = "20251122T210000";
-    const timeZone = "America/Sao_Paulo"; // ajuste para seu fuso
+    // Horário em UTC
+    const dtStartUTC = "20251122T210000Z"; // 18:00 BRT -> 21:00 UTC
+    const dtEndUTC   = "20251123T000000Z"; // 21:00 BRT -> 00:00 UTC
 
     const icsContent = `
 BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//SeuSite//Eventos//PT
-BEGIN:VTIMEZONE
-TZID:${timeZone}
-END:VTIMEZONE
 BEGIN:VEVENT
 SUMMARY:${title}
 DESCRIPTION:${description}
 LOCATION:${location}
-DTSTART;TZID=${timeZone}:${startDate}
-DTEND;TZID=${timeZone}:${endDate}
+DTSTART:${dtStartUTC}
+DTEND:${dtEndUTC}
 END:VEVENT
 END:VCALENDAR
 `.trim();

@@ -55,31 +55,32 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
 // ===== ICS: adicionar ao calendário =====
 document.getElementById('addCalendar').addEventListener('click', () => {
-    // Dados do evento
     const title = "Noivado Leandro e Erwelly";
     const description = "Esperamos por você!";
     const location = "Endereço do evento";
-    
-    // Data de início e fim (formato: AAAAMMDDTHHMMSS)
-    const startDate = "20251122T180000"; // 22 de novembro de 2025 às 18:00
-    const endDate = "20251122T210000";   // 22 de novembro de 2025 às 21:00
 
-    // Conteúdo do ICS
+    // Usando TZID para horário local
+    const startDate = "20251122T180000";
+    const endDate = "20251122T210000";
+    const timeZone = "America/Sao_Paulo"; // ajuste para seu fuso
+
     const icsContent = `
 BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//SeuSite//Eventos//PT
+BEGIN:VTIMEZONE
+TZID:${timeZone}
+END:VTIMEZONE
 BEGIN:VEVENT
 SUMMARY:${title}
 DESCRIPTION:${description}
 LOCATION:${location}
-DTSTART:${startDate}
-DTEND:${endDate}
+DTSTART;TZID=${timeZone}:${startDate}
+DTEND;TZID=${timeZone}:${endDate}
 END:VEVENT
 END:VCALENDAR
 `.trim();
 
-    // Criar blob e link temporário
     const blob = new Blob([icsContent], { type: 'text/calendar' });
     const url = URL.createObjectURL(blob);
 

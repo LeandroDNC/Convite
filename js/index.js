@@ -57,7 +57,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 document.getElementById('addCalendar').addEventListener('click', () => {
     const title = "Noivado Leandro e Ervelly";
     const description = "Esperamos por você!";
-    const location = "Endereço do evento";
+    const location = "https://maps.app.goo.gl/wMjr2hgvrJ4fChGP9";
 
     // Horário em UTC
     const dtStartUTC = "20251122T210000Z"; // 18:00 BRT -> 21:00 UTC

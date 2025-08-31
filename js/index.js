@@ -56,13 +56,13 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 // ===== ICS: adicionar ao calendário =====
 document.getElementById('addCalendar').addEventListener('click', () => {
     // Dados do evento
-    const title = "Evento Especial";
+    const title = "Noivado Leandro e Erwelly";
     const description = "Esperamos por você!";
     const location = "Endereço do evento";
     
     // Data de início e fim (formato: AAAAMMDDTHHMMSS)
-    const startDate = "20250915T180000"; // 15 de setembro de 2025 às 18:00
-    const endDate = "20250915T210000";   // 15 de setembro de 2025 às 21:00
+    const startDate = "20251122T180000"; // 22 de novembro de 2025 às 18:00
+    const endDate = "20251122T210000";   // 22 de novembro de 2025 às 21:00
 
     // Conteúdo do ICS
     const icsContent = `
@@ -85,12 +85,13 @@ END:VCALENDAR
 
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'evento.ics';
+    a.download = 'noivado_leandro_ervelly.ics';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
 });
+
 
 // Música romântica com fade-in automático
 const bgMusic = document.getElementById("bg-music");
